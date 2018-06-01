@@ -22,13 +22,15 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatCheckboxModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTableModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { ShowPersonListComponent } from './components/show-person-list/show-person-list.component';
 import { PersonService } from './services/person.service';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
 	{ path: 'add', component: PersonDetailComponent },
@@ -46,6 +48,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
+    HttpClientModule,
 
     BrowserAnimationsModule,
     FormsModule,
@@ -53,10 +56,14 @@ const routes: Routes = [
     MatCheckboxModule,
     MatDialogModule,
     MatToolbarModule,
+    MatTableModule,
+    MatIconModule,
+
+
+
 
     MatButtonModule,
     MatMenuModule,
-    MatIconModule,
     MatCardModule,
     MatSliderModule,
     MatProgressBarModule,
@@ -73,6 +80,8 @@ const routes: Routes = [
   ],
   providers: [
     PersonService,
+    HttpClient,
+
   ],
   entryComponents:[
     ConfirmationDialogComponent

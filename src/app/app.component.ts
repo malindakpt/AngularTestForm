@@ -16,4 +16,8 @@ export class AppComponent {
   public loadAddNew(): void {
     this.router.navigateByUrl('/add');
   }
+
+  public loadShowAll(): void {
+    this.router.navigateByUrl('/show');
+  }
 }

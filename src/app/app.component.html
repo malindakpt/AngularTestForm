@@ -1,7 +1,9 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row class="tool-bar">
-        <span>Custom Toolbar</span>
-        <span><button mat-button (click)="loadAddNew()">Add New</button></span>
+        <span>Person Console</span>
+      
+        <span>
+            <button mat-button (click)="loadAddNew()"><mat-icon>add</mat-icon>    Add New</button><button mat-button (click)="loadShowAll()"><mat-icon>list</mat-icon>   Show All</button></span>
     </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>
