@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 import { Person } from '../../model/person';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material';
@@ -13,7 +14,9 @@ export class PersonDetailComponent implements OnInit {
 
   detailFormGrp: FormGroup;
 
+
   constructor(
+    private router: Router,
     private formBuilder: FormBuilder,
     public dialog: MatDialog) {
     this.detailFormGrp = this.formBuilder.group({
@@ -40,7 +43,7 @@ export class PersonDetailComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      this.router.navigateByUrl('/show');
     });
   }
 
