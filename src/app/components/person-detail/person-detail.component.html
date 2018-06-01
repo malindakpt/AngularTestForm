@@ -1,48 +1,47 @@
-
 <div class="container middle-container">
-    
-  <div>
-    
-    <form [formGroup]="detailFormGrp"  (ngSubmit)="createNewPerson(detailFormGrp.value)">
-      
-      <div class="example-container">
-        <mat-form-field>
-          <input matInput placeholder="Enter your first name" formControlName="firstName">
-          <mat-error *ngIf="!detailFormGrp.controls.firstName.email && !detailFormGrp.controls.firstName.valid && detailFormGrp.controls.firstName.touched">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-      </div>
+  <br>
+  <!-- <mat-card> -->
+      <form [formGroup]="detailFormGrp" (ngSubmit)="createNewPerson(detailFormGrp.value)">
 
-      <div class="example-container">
-        <mat-form-field>
-          <input matInput placeholder="Enter your last name" formControlName="last_name">
-          <mat-error *ngIf="!detailFormGrp.controls.last_name.valid && detailFormGrp.controls.last_name.touched">Last Name is required</mat-error>
-        </mat-form-field>
-      </div>
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Enter your first name" formControlName="firstName">
+            <mat-error *ngIf="!detailFormGrp.controls.firstName.email && !detailFormGrp.controls.firstName.valid && detailFormGrp.controls.firstName.touched">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
 
-      <div class="example-container">
-        <mat-form-field>
-          <input matInput placeholder="Enter your email" formControlName="emailAddress">
-          <mat-error *ngIf="!detailFormGrp.controls.emailAddress.valid && detailFormGrp.controls.emailAddress.touched">Email is required</mat-error>
-        </mat-form-field>
-      </div>
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Enter your last name" formControlName="last_name">
+            <mat-error *ngIf="!detailFormGrp.controls.last_name.valid && detailFormGrp.controls.last_name.touched">Last Name is required</mat-error>
+          </mat-form-field>
+        </div>
 
-      <section class="example-section">
-        <mat-checkbox class="example-margin" formControlName="subscribed">Subscribe</mat-checkbox>
-      </section>
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Enter your email" formControlName="emailAddress">
+            <mat-error *ngIf="!detailFormGrp.controls.emailAddress.valid && detailFormGrp.controls.emailAddress.touched">Email is required</mat-error>
+          </mat-form-field>
+        </div>
 
-      <div>
-        <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dob">
-          <mat-error *ngIf="!detailFormGrp.controls.dob.valid && detailFormGrp.controls.dob.touched">Date of birth is required</mat-error>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </div>
+        <section class="example-section">
+          <mat-checkbox class="example-margin" formControlName="subscribed">Subscribe</mat-checkbox>
+        </section>
+        <br>
 
-      <button mat-raised-button type="submit"   >
-      <!-- <button mat-raised-button type="submit" [disabled]="!detailFormGrp.valid"> -->
-        Submit
-      </button>
-    </form>
-  </div>
-  
+        <div>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dob">
+            <mat-error *ngIf="!detailFormGrp.controls.dob.valid && detailFormGrp.controls.dob.touched">Date of birth is required</mat-error>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <button mat-raised-button type="submit">
+          <!-- <button mat-raised-button type="submit" [disabled]="!detailFormGrp.valid"> -->
+          Submit
+        </button>
+      </form>
+  <!-- </mat-card> -->
+</div>

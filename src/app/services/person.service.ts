@@ -15,20 +15,14 @@ export class PersonService {
 
   public addPerson(newPerson: Person): void {
     this.personArr.push(newPerson);
-  
   }
 
   public getPersonArr(): Array<Person> {
-    this.getJSON().subscribe(data =>
-      {
-        console.log(data);
-      }, 
-      error => console.log(error));
+   
     return this.personArr;
   }
 
   public getJSON(): Observable<any> {
     return this.http.get("./assets/data.json");
-
   }
 }
