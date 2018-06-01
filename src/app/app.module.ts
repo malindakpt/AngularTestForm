@@ -19,21 +19,27 @@ import {
   MatSnackBarModule,
   MatTooltipModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatCheckboxModule
 } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonDetailComponent
+    PersonDetailComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
 
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatDialogModule,
 
     MatButtonModule,
     MatMenuModule,
@@ -53,6 +59,9 @@ import { PersonDetailComponent } from './components/person-detail/person-detail.
     MatNativeDateModule,
   ],
   providers: [],
+  entryComponents:[
+    ConfirmationDialogComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
