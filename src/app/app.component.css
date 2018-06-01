@@ -7,4 +7,9 @@
   .example-full-width {
     width: 100%;
   }
+
+  .tool-bar {
+    display: flex;
+    justify-content: space-between;
+  }
   

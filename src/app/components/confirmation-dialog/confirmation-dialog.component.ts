@@ -19,5 +19,6 @@ export class ConfirmationDialogComponent implements OnInit {
 
   public addPerson(): void {
     this.personService.addPerson(this.data);
+    this.dialogRef.close();
   }
 }
