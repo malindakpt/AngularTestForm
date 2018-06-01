@@ -20,7 +20,8 @@ import {
   MatTooltipModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatToolbarModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
@@ -40,6 +41,7 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
     ReactiveFormsModule,
     MatCheckboxModule,
     MatDialogModule,
+    MatToolbarModule,
 
     MatButtonModule,
     MatMenuModule,

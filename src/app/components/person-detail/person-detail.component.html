@@ -1,8 +1,15 @@
-<div class="container">
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Custom Toolbar</span>
+    </mat-toolbar-row>
+  
+  </mat-toolbar>
+<div class="container middle-container">
+    
   <div>
-    <h1>Hero Form</h1>
+    
     <form [formGroup]="detailFormGrp"  (ngSubmit)="createNewPerson(detailFormGrp.value)">
-
+      
       <div class="example-container">
         <mat-form-field>
           <input matInput placeholder="Enter your first name" formControlName="firstName">

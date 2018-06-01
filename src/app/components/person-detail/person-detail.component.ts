@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../../model/person';
-import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
@@ -12,7 +12,7 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
 export class PersonDetailComponent implements OnInit {
 
   detailFormGrp: FormGroup;
-  
+
   constructor(
     private formBuilder: FormBuilder,
     public dialog: MatDialog) {
@@ -23,7 +23,7 @@ export class PersonDetailComponent implements OnInit {
       'emailAddress': new FormControl('', [Validators.required, Validators.email]),
       'dob': new FormControl('', [Validators.required]),
     });
-   }
+  }
 
   ngOnInit() {
   }
@@ -41,17 +41,16 @@ export class PersonDetailComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // this.animal = result;
     });
   }
-  
 
-// email = new FormControl('', [Validators.required, Validators.email]);
-email = new FormControl();
-month = new FormControl();
-getErrorMessage() {
-  return this.month.hasError('required') ? 'You must enter a value' :
+
+  // email = new FormControl('', [Validators.required, Validators.email]);
+  email = new FormControl();
+  month = new FormControl();
+  getErrorMessage() {
+    return this.month.hasError('required') ? 'You must enter a value' :
       this.month.hasError('email') ? 'Not a valid email' :
-          '';
-}
+        '';
+  }
 }
