@@ -1,25 +1,28 @@
 <div class="container middle-container">
   <br>
-  <!-- <mat-card> -->
+  <mat-card class="add-new">
+      <mat-card-title>
+        Add New Person
+        </mat-card-title>
       <form [formGroup]="detailFormGrp" (ngSubmit)="createNewPerson(detailFormGrp.value)">
 
         <div class="example-container">
           <mat-form-field>
-            <input matInput placeholder="Enter your first name" formControlName="firstName">
+            <input matInput placeholder="Enter your first name" formControlName="firstName" autocomplete="firstName">
             <mat-error *ngIf="!detailFormGrp.controls.firstName.email && !detailFormGrp.controls.firstName.valid && detailFormGrp.controls.firstName.touched">{{getErrorMessage()}}</mat-error>
           </mat-form-field>
         </div>
 
         <div class="example-container">
           <mat-form-field>
-            <input matInput placeholder="Enter your last name" formControlName="last_name">
+            <input matInput placeholder="Enter your last name" formControlName="last_name" autocomplete="last_name">
             <mat-error *ngIf="!detailFormGrp.controls.last_name.valid && detailFormGrp.controls.last_name.touched">Last Name is required</mat-error>
           </mat-form-field>
         </div>
 
         <div class="example-container">
           <mat-form-field>
-            <input matInput placeholder="Enter your email" formControlName="emailAddress">
+            <input matInput placeholder="Enter your email" formControlName="emailAddress" autocomplete="emailAddress">
             <mat-error *ngIf="!detailFormGrp.controls.emailAddress.valid && detailFormGrp.controls.emailAddress.touched">Email is required</mat-error>
           </mat-form-field>
         </div>
@@ -31,17 +34,17 @@
 
         <div>
           <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dob">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dob" autocomplete="dob">
             <mat-error *ngIf="!detailFormGrp.controls.dob.valid && detailFormGrp.controls.dob.touched">Date of birth is required</mat-error>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </div>
 
-        <button mat-raised-button type="submit">
+        <button mat-raised-button type="submit" class="right">
           <!-- <button mat-raised-button type="submit" [disabled]="!detailFormGrp.valid"> -->
           Submit
         </button>
       </form>
-  <!-- </mat-card> -->
+  </mat-card>
 </div>

@@ -26,6 +26,7 @@ import {
   MatTableModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { ShowPersonListComponent } from './components/show-person-list/show-person-list.component';
@@ -46,6 +47,8 @@ const routes: Routes = [
     ShowPersonListComponent
   ],
   imports: [
+    NgbModule.forRoot(),
+    NgbModule,
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,

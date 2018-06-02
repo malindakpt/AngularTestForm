@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.mat-dialog-container#mat-dialog-0 {
-    padding: 0px;
+.mat-dialog-container {
+    padding: 0px !important;
 }
 
 
@@ -14,4 +14,23 @@
 
 body {
     margin: 0px;
+}
+
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 258px !important;
+}
+
+.right {
+    float: right;
+}
+
+.header {
+    font: 500 27px/32px Roboto,
+    "Helvetica Neue",
+    sans-serif;
+    margin: 0;
 }

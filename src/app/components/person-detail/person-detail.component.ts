@@ -21,22 +21,27 @@ export class PersonDetailComponent implements OnInit {
     private formBuilder: FormBuilder,
     private personService: PersonService,
     public dialog: MatDialog) {
+    this.setData({});
   
   }
 
   ngOnInit() {
     this.personService.getJSON().subscribe(data =>
       {
-        console.log(data);
-        this.detailFormGrp = this.formBuilder.group({
-          'firstName': new FormControl(data.firstName, [Validators.required]),
-          'last_name': new FormControl(data.last_name, [Validators.required]),
-          'subscribed': new FormControl(data.subscribed, []),
-          'emailAddress': new FormControl(data.emailAddress, [Validators.required, Validators.email]),
-          'dob': new FormControl(data.dob, [Validators.required]),
-        });
+        this.setData(data);
+      
       }, 
       error => console.log(error));
+  }
+
+  private setData(data: any): void {
+    this.detailFormGrp = this.formBuilder.group({
+      'firstName': new FormControl(data.firstName, [Validators.required]),
+      'last_name': new FormControl(data.last_name, [Validators.required]),
+      'subscribed': new FormControl(data.subscribed, []),
+      'emailAddress': new FormControl(data.emailAddress, [Validators.required, Validators.email]),
+      'dob': new FormControl(data.dob, [Validators.required]),
+    });
   }
 
 
@@ -51,7 +56,7 @@ export class PersonDetailComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.router.navigateByUrl('/show');
+     
     });
   }
 

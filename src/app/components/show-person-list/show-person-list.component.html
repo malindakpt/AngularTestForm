@@ -1,10 +1,13 @@
-<!-- <mat-list role="list">
-  <mat-list-item role="listitem"  *ngFor="let person of personArr"> {{ person.firstName }}</mat-list-item>
-</mat-list> -->
 
 <div class="table-container">
+    <span class="header">Persons List</span>
+  
+</div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+<div class="table-container">
+  
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
@@ -44,5 +47,11 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
+ 
+</div>
 
+
+<div class="row">
+  <div class="col-6">AA</div>
+  <div class="col-6">BB</div>
 </div>

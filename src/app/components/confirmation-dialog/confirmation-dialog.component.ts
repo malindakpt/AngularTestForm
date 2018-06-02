@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { PersonService } from '../../services/person.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirmation-dialog',
@@ -10,6 +11,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class ConfirmationDialogComponent implements OnInit {
 
   constructor(
+    private router: Router,
     public dialogRef: MatDialogRef<ConfirmationDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private personService: PersonService) { }
@@ -20,5 +22,10 @@ export class ConfirmationDialogComponent implements OnInit {
   public addPerson(): void {
     this.personService.addPerson(this.data);
     this.dialogRef.close();
+    this.router.navigateByUrl('/show');
+  }
+
+  public cancel(): void {
+    this.dialogRef.close();   
   }
 }
