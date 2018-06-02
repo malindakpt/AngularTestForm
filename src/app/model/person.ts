@@ -5,7 +5,7 @@ export class Person {
       public last_name: string,
       public emailAddress: string,
       public subscribed: boolean,
-      public dob: string
+      public dob: Date
     ) {  }
   
   }

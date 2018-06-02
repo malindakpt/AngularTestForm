@@ -5,13 +5,6 @@
     padding: 0px !important;
 }
 
-
-.middle-container {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-}
-
 body {
     margin: 0px;
 }
@@ -22,10 +15,6 @@ body {
     flex: auto;
     min-width: 0;
     width: 258px !important;
-}
-
-.right {
-    float: right;
 }
 
 .header {

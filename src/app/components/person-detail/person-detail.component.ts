@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { Person } from '../../model/person';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material';
@@ -13,24 +13,21 @@ import { PersonService } from '../../services/person.service';
 })
 export class PersonDetailComponent implements OnInit {
 
-  detailFormGrp: FormGroup;
-
-
+  public detailFormGrp: FormGroup;
+  
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
     private personService: PersonService,
     public dialog: MatDialog) {
     this.setData({});
-  
+
   }
 
-  ngOnInit() {
-    this.personService.getJSON().subscribe(data =>
-      {
-        this.setData(data);
-      
-      }, 
+  private ngOnInit(): void {
+    this.personService.getJSON().subscribe(data => {
+      this.setData(data);
+    },
       error => console.log(error));
   }
 
@@ -44,7 +41,6 @@ export class PersonDetailComponent implements OnInit {
     });
   }
 
-
   public createNewPerson(newPerson: Person): void {
     this.checkConfirmation(newPerson);
   }
@@ -56,17 +52,7 @@ export class PersonDetailComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-     
+      // dialog closed
     });
-  }
-
-
-  // email = new FormControl('', [Validators.required, Validators.email]);
-  email = new FormControl();
-  month = new FormControl();
-  getErrorMessage() {
-    return this.month.hasError('required') ? 'You must enter a value' :
-      this.month.hasError('email') ? 'Not a valid email' :
-        '';
   }
 }

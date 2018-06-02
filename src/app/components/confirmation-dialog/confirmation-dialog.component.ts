@@ -8,16 +8,13 @@ import { Router } from '@angular/router';
   templateUrl: './confirmation-dialog.component.html',
   styleUrls: ['./confirmation-dialog.component.css']
 })
-export class ConfirmationDialogComponent implements OnInit {
+export class ConfirmationDialogComponent {
 
   constructor(
     private router: Router,
     public dialogRef: MatDialogRef<ConfirmationDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private personService: PersonService) { }
-
-  ngOnInit() {
-  }
 
   public addPerson(): void {
     this.personService.addPerson(this.data);

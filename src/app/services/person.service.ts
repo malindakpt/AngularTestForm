@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Person } from '../model/person';
-
 import { HttpClient } from '@angular/common/http'; 
 import { Observable } from 'rxjs';
 
@@ -18,7 +17,6 @@ export class PersonService {
   }
 
   public getPersonArr(): Array<Person> {
-   
     return this.personArr;
   }
 
