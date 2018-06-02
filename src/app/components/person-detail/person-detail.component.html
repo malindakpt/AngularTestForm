@@ -1,10 +1,12 @@
 <div class="d-flex justify-content-center">
-  <mat-card class="mt-4">
-    <mat-card-title>
-      Add New Person
-    </mat-card-title>
+  <!-- <mat-card class="mt-4"> -->
+   
     <form [formGroup]="detailFormGrp" (ngSubmit)="createNewPerson(detailFormGrp.value)">
-
+      <br><br>
+      <div class="header">
+        Add New Person
+      </div>
+      <br>
       <div class="example-container">
         <mat-form-field>
           <input matInput placeholder="Enter your first name" formControlName="firstName" autocomplete="firstName">
@@ -44,5 +46,5 @@
         Submit
       </button>
     </form>
-  </mat-card>
+  <!-- </mat-card> -->
 </div>

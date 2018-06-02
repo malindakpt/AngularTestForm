@@ -14,7 +14,7 @@ import { PersonService } from '../../services/person.service';
 export class PersonDetailComponent implements OnInit {
 
   public detailFormGrp: FormGroup;
-  
+
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -24,7 +24,7 @@ export class PersonDetailComponent implements OnInit {
 
   }
 
-  private ngOnInit(): void {
+  public ngOnInit(): void {
     this.personService.getJSON().subscribe(data => {
       this.setData(data);
     },

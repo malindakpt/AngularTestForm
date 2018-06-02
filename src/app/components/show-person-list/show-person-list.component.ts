@@ -7,7 +7,7 @@ import { Person } from '../../model/person';
   templateUrl: './show-person-list.component.html',
   styleUrls: ['./show-person-list.component.css']
 })
-export class ShowPersonListComponent implements OnInit {
+export class ShowPersonListComponent {
 
   public personArr;
   public dataSource;
