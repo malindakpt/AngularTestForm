@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import {
   MatAutocompleteModule,
   MatButtonModule,
-  MatCardModule,
   MatDialogModule,
   MatGridListModule,
   MatIconModule,
@@ -16,9 +15,6 @@ import {
   MatMenuModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
-  MatSliderModule,
-  MatSnackBarModule,
-  MatTooltipModule,
   MatDatepickerModule,
   MatNativeDateModule,
   MatCheckboxModule,
@@ -26,7 +22,6 @@ import {
   MatTableModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { ShowPersonListComponent } from './components/show-person-list/show-person-list.component';
@@ -50,7 +45,6 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
-
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -60,22 +54,8 @@ const routes: Routes = [
     MatTableModule,
     MatIconModule,
     MatMenuModule,
-
-
-
     MatButtonModule,
-   
-    MatCardModule,
-    MatSliderModule,
-    MatProgressBarModule,
-    MatAutocompleteModule,
     MatInputModule,
-    MatGridListModule,
-    MatSnackBarModule,
-    MatProgressSpinnerModule,
-    MatTooltipModule,
-    MatListModule,
-    MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
   ],
