@@ -1,9 +1,31 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row class="tool-bar">
-        <span class="header"><mat-icon>supervised_user_circle</mat-icon>    Person Management</span>
-      
-        <span>
-            <button mat-button (click)="loadAddNew()"><mat-icon>add</mat-icon>    Add New</button><button mat-button (click)="loadShowAll()"><mat-icon>list</mat-icon>   Show All</button></span>
+        <div class="row w-100">
+            <div class="col-2 d-md-none">
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="loadAddNew()">
+                        <mat-icon>add</mat-icon>
+                        <span>Add New</span>
+                    </button>
+                    <button mat-menu-item (click)="loadShowAll()">
+                        <mat-icon>list</mat-icon>
+                        <span>Show All</span>
+                    </button>
+                </mat-menu>
+            </div>
+            <div class="col-6 col-md-6 header d-flex justify-content-start">
+                <mat-icon class="logo">supervised_user_circle</mat-icon> Persons
+            </div>
+            <div class="col-5 col-md-6 d-none d-md-flex justify-content-end">
+                <button mat-button (click)="loadAddNew()">
+                    <mat-icon>add</mat-icon> Add New</button>
+                <button mat-button (click)="loadShowAll()">
+                    <mat-icon>list</mat-icon> Show All</button>
+            </div>
+        </div>
     </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>

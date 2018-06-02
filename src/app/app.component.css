@@ -12,4 +12,9 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .logo {
+    margin-top: 4px;
+    margin-right: 11px;
+  }
   

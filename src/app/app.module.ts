@@ -47,8 +47,6 @@ const routes: Routes = [
     ShowPersonListComponent
   ],
   imports: [
-    NgbModule.forRoot(),
-    NgbModule,
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
@@ -61,12 +59,12 @@ const routes: Routes = [
     MatToolbarModule,
     MatTableModule,
     MatIconModule,
-
+    MatMenuModule,
 
 
 
     MatButtonModule,
-    MatMenuModule,
+   
     MatCardModule,
     MatSliderModule,
     MatProgressBarModule,

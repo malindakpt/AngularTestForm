@@ -12,11 +12,13 @@ export class ShowPersonListComponent implements OnInit {
   public personArr;
   public dataSource;
   public displayedColumns;
+  public displayedColumnsMob;
 
   constructor(personService: PersonService) {
 
     this.personArr = personService.getPersonArr();
     this.displayedColumns = ['firstName', 'last_name', 'emailAddress', 'subscribed','dob'];
+    this.displayedColumnsMob = ['firstName', 'subscribed'];
     this.dataSource = ELEMENT_DATA;
   }
 
